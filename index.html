@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
+  <meta name="keywords" content="Quadrupedal, Mobile Manipulation, Whole body control">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>QuadWBG: Generalizable Quadrupedal Whole-Body Grasping</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/wbg_icon.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="http://www.galbot.com/">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://pku-epic.github.io/GAMMA/">
+            GAMMA
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">QuadWBG: Generalizable Quadrupedal Whole-Body Grasping</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://42jaylonw.github.io/">Jilong Wang</a><sup>1,2*</sup>,</span>
+            <span class="author-block">
+              <a href="https://linkedin.com/in/javokhir-rajabov-58b8a3190">Javokhirbek Rajabov</a><sup>1,2*</sup>,</span>
+            <span class="author-block">
+              <a href="https://co1one.github.io/">Chaoyi Xu</a><sup>2,4</sup>,
+            </span>
+            <span class="author-block">
+              Yiming Zheng<sup>2,3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://hughw19.github.io/">He Wang</a><sup>1,2,4,†</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>CFCS, School of Computer Science, Peking University</span>
+            <span class="author-block"><sup>2</sup>Galbot</span>
+            <span class="author-block"><sup>2</sup>University of Toronto</span>
+            <span class="author-block"><sup>2</sup>Beijing Academy of Artificial Intelligence (BAAI)</span>
+            <p>
+            *Equal contribution
+            </p>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+<!--              &lt;!&ndash; PDF Link. &ndash;&gt;-->
+<!--              <span class="link-block">-->
+<!--                <a href="https://arxiv.org/pdf/..."-->
+<!--                   class="external-link button is-normal is-rounded is-dark">-->
+<!--                  <span class="icon">-->
+<!--                      <i class="fas fa-file-pdf"></i>-->
+<!--                  </span>-->
+<!--                  <span>Paper</span>-->
+<!--                </a>-->
+<!--              </span>-->
+<!--              <span class="link-block">-->
+<!--                <a href="https://arxiv.org/abs/..."-->
+<!--                   class="external-link button is-normal is-rounded is-dark">-->
+<!--                  <span class="icon">-->
+<!--                      <i class="ai ai-arxiv"></i>-->
+<!--                  </span>-->
+<!--                  <span>arXiv</span>-->
+<!--                </a>-->
+<!--              </span>-->
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="https://youtube.com/playlist?list=PLHt_fpvZmCueMLXLwx16qaJgBXRNfMSMa&si=-Yo4lsmGpnIX6oP1"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video Collection</span>
+                </a>
+              </span>
+<!--              &lt;!&ndash; Code Link. &ndash;&gt;-->
+<!--              <span class="link-block">-->
+<!--                <a href="https://github.com/google/nerfies"-->
+<!--                   class="external-link button is-normal is-rounded is-dark">-->
+<!--                  <span class="icon">-->
+<!--                      <i class="fab fa-github"></i>-->
+<!--                  </span>-->
+<!--                  <span>Code</span>-->
+<!--                  </a>-->
+<!--              </span>-->
+<!--              &lt;!&ndash; Dataset Link. &ndash;&gt;-->
+<!--              <span class="link-block">-->
+<!--                <a href="https://github.com/google/nerfies/releases/tag/0.1"-->
+<!--                   class="external-link button is-normal is-rounded is-dark">-->
+<!--                  <span class="icon">-->
+<!--                      <i class="far fa-images"></i>-->
+<!--                  </span>-->
+<!--                  <span>Data</span>-->
+<!--                  </a>-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered is-vcentered is-variable is-1">
+      <div class="column is-4 has-text-centered">
+        <div style="position:relative;padding-top:56.25%;">
+            <iframe src="https://www.youtube.com/embed/ey6zqNG2BpY?si=qsF7U5sn8LRzkQ7J"
+                    allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius: 10px; border: 1px solid #bbb;">
+            </iframe>
+        </div>
+      </div>
+      <div class="column is-5 has-text-centered">
+        <div style="position:relative;padding-top:56.25%;">
+            <iframe src="https://www.youtube.com/embed/kWagQ3en4Vs?si=UELw2326MDn_-s3C"
+                    allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius: 10px; border: 1px solid #bbb;">
+            </iframe>
+        </div>
+      </div>
+      <div class="column is-4 has-text-centered">
+        <div style="position:relative;padding-top:56.25%;">
+            <iframe src="https://www.youtube.com/embed/PjO1ZOLMPDE?si=aT4eICBL842LAZpd"
+                    allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius: 10px; border: 1px solid #bbb;">
+            </iframe>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          Legged robots with advanced manipulation capabilities have the potential to significantly improve household duties and urban maintenance. Despite considerable progress in developing robust locomotion and precise manipulation methods, seamlessly integrating these into cohesive whole-body control for real-world applications remains challenging. In this paper, we present a  modular framework for robust and generalizable whole-body loco-manipulation controller based on a single arm-mounted camera. By using reinforcement learning (RL), we enable a robust low-level policy for command execution over 5 dimensions (5D) and a grasp-aware high-level policy guided by a novel metric, Generalized Oriented Reachability Map (GORM).
+          The proposed system achieves state-of-the-art one-time grasping accuracy of 89% in real world, including challenging tasks such as grasping transparent objects.
+          Through extensive simulations and real-world experiments, we demonstrate that our system can effectively manage a large workspace, from floor level to above body height, and perform diverse whole-body loco-manipulation tasks.
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+<!--    &lt;!&ndash; Paper video. &ndash;&gt;-->
+<!--    <div class="columns is-centered has-text-centered">-->
+<!--      <div class="column is-four-fifths">-->
+<!--        <h2 class="title is-3">Video</h2>-->
+<!--        <div class="publication-video">-->
+<!--          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"-->
+<!--                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    &lt;!&ndash;/ Paper video. &ndash;&gt;-->
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+    <h2 class="title is-2" style="text-align: center;">Pipeline</h2>
+
+    <div class="columns is-centered">
+      <div class="column is-three-quarters has-text-centered">
+        <figure class="image">
+          <img src="./static/images/pipeline.png" alt="Pipeline Image" style="border-radius: 10px; border: 1px solid #bbb; width: 100%;">
+        </figure>
+        <div class="content has-text-justified">
+          Pipeline of our system.
+          First, we train a teacher-student 5D low-level policy in simulation (A).
+          The perception module (B) then continuously tracks the object,
+          and generates grasping pose guiding manipulation module (C).
+          This pose is also utilized by the planning module (D) to command the locomotion policy.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container">
+<!--    <h2 class="title is-2" style="text-align: center;">demo</h2>-->
+<!--    <div class="columns is-centered has-text-centered">-->
+<!--      <div class="column is-two-thirds">-->
+<!--        <div class="content has-text-justified">-->
+<!--          <p>-->
+<!--            ...-->
+<!--          </p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+    <!-- video -->
+    <div class="columns is-centered">
+      <div class="column is-full-width is-centered has-text-centered">
+        <p>
+          Grasping Transparent Objects:
+        </p>
+        <video controls autoplay loop muted playsinline src="./static/videos/office2.mp4"  style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;">
+        </video>
+      </div>
+      <div class="column is-full-width is-centered has-text-centered">
+        <p>
+          Continuous Task Execution on Random Objects:
+        </p>
+        <video controls autoplay loop muted playsinline src="./static/videos/long_term.mp4"  style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;">
+        </video>
+      </div>
+      <div class="column is-full-width is-centered has-text-centered">
+        <p>
+          Grasping Objects at Various Heights:
+        </p>
+        <video controls autoplay loop muted playsinline src="./static/videos/table.mp4" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;">
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!--<section class="section" id="BibTeX">-->
+<!--  <div class="container is-max-desktop content">-->
+<!--    <h2 class="title">BibTeX</h2>-->
+<!--    <pre><code>@article{park2021nerfies,-->
+<!--  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},-->
+<!--  title     = {Nerfies: Deformable Neural Radiance Fields},-->
+<!--  journal   = {ICCV},-->
+<!--  year      = {2021},-->
+<!--}</code></pre>-->
+<!--  </div>-->
+<!--</section>-->
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <p>Page template borrowed from <a href="https://nerfies.github.io/"><span class="dnerf">Nerfies</span></a>.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
